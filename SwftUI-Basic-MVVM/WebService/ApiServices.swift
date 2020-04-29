@@ -11,7 +11,9 @@ class ApiServices {
     
     func load(url: URL) {
         
-        
+        URLSession.shared.dataTask(with: URL) {
+            
+        }
         
     }
 }
