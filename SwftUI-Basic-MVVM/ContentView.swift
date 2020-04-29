@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel = UserListViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            ForEach(viewModel.users, id: \.id){ user in
+                VStack(alignment: .leading) {
+                    Text("Name : \(user.name)")
+                    Text("Email : \(user.email)")
+                    Text("Phone : \(user.phone)")
+                    Text("Gender : \(user.gender)")
+                }
+            }
+        }
     }
 }
 
